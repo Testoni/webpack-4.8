@@ -1,4 +1,5 @@
 import Person from './person'
+import './modules/moduleA'
 
 const p = new Person
 
