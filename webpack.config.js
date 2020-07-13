@@ -2,7 +2,7 @@ const modeDev = process.env.NODE_ENV !== 'production'
 const webpack = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const Uglify = require('uglify-webpack-plugin')
-const OptimizeCssAssetsPlugin = require('optimiza-css-assests-webpack-plugin')
+const OptimizeCssAssetsPlugin = require('optimize-css-assests-webpack-plugin')
 
 module.exports = {
     mode: modeDev ? 'development' : 'production', // production - npm run build / npm run dev
@@ -33,8 +33,12 @@ module.exports = {
                     MiniCssExtractPlugin.loader,
                     // 'style-loader', // add css into dom inject tag <style></style>
                     'css-loader', // @import, url() ...
-                    'sass-loader'
+                    'sass-loader',
                 ]
+            },
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: ['file-loader']
             }
         ]
     }
