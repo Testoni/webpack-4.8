@@ -1,8 +1,7 @@
 import Person from './person'
-import './modules/moduleA'
+import './assests/css/style.css'
 
 const p = new Person
-
 console.log(p.greet())
 
 // npm start
